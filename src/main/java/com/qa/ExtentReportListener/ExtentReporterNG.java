@@ -24,7 +24,6 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public class ExtentReporterNG implements IReporter {
 	private ExtentReports extent;
-
 	public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites,
 			String outputDirectory) {
 		extent = new ExtentReports(outputDirectory + File.separator
