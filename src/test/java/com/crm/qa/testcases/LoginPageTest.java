@@ -39,7 +39,7 @@ public class LoginPageTest extends TestBase {
 	}
 
 	@Test(priority = 3)
-	public void loginTest() {
+	public void loginTest() throws InterruptedException {
 		homePage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
 		String title = homePage.verifyHomePageTitle();
 		System.out.println("Actual Title: " + title);
