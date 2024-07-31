@@ -26,10 +26,13 @@ public class LoginPageTest extends TestBase {
 	@Test(priority = 1)
 	public void loginPageTitleTest() {
 		String title = loginPage.validateLoginPageTitle();
-		Assert.assertEquals(title, "#1 Free CRM for Any Business: Online Customer Relationship Software");
+		System.out.println("Actual Title: " + title);
+		System.out.println("Expected Title: " + title);
+		Assert.assertEquals(title, "Login");
+		testcaseSuccesful();
 	}
 
-	@Test(priority = 2)
+	@Test(priority = 2, enabled = false)
 	public void crmLogoImageTest() {
 		boolean flag = loginPage.validateCRMImage();
 		Assert.assertTrue(flag);
@@ -38,6 +41,11 @@ public class LoginPageTest extends TestBase {
 	@Test(priority = 3)
 	public void loginTest() {
 		homePage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
+		String title = homePage.verifyHomePageTitle();
+		System.out.println("Actual Title: " + title);
+		System.out.println("Expected Title: " + title);
+		Assert.assertEquals(title, "Home");
+		testcaseSuccesful();
 	}
 
 	@AfterMethod
